@@ -1,0 +1,65 @@
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .contact-info {
+    text-align: right;
+    font-style: italic;
+}
+
+/* Separator line */
+.separator {
+    border-top: 1px solid #333;
+    margin: 15px 0;
+}
+
+/* General body styling */
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 11pt;
+    line-height: 1.15;
+    margin: 1in;
+    color: #333;
+}
+
+/* Section headers */
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 2px;
+}
+
+/* Job titles and company names */
+h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Remove default margins from paragraphs in lists */
+li p {
+    margin: 0;
+}
+
+/* Spacing for list items */
+ul {
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}

@@ -29,6 +29,7 @@ jobs:
       run: |
         pandoc resume.md -o resume.pdf \
           --pdf-engine=pdflatex \
+          --css=resume-style.css \
           --variable geometry:margin=1in \
           --variable fontsize=11pt \
           --variable linestretch=1.15
