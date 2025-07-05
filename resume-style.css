@@ -1,65 +1,88 @@
-/* Header styling */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.2;
+    margin: 0.75in;
+    color: #333;
+    max-width: 8.5in;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: baseline;
+    margin-bottom: 8px;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 18pt;
+    font-weight: normal;
+    text-align: left;
 }
 
-.header .contact-info {
+.contact-info {
     text-align: right;
     font-style: italic;
+    font-size: 10pt;
 }
 
-/* Separator line */
 .separator {
     border-top: 1px solid #333;
-    margin: 15px 0;
+    margin: 12px 0;
 }
 
-/* General body styling */
-body {
-    font-family: 'Times New Roman', serif;
-    font-size: 11pt;
-    line-height: 1.15;
-    margin: 1in;
-    color: #333;
-}
-
-/* Section headers */
 h2 {
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 16px;
+    margin-bottom: 6px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 2px;
 }
 
-/* Job titles and company names */
 h3 {
     font-size: 12pt;
     font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 4px;
 }
 
-/* Remove default margins from paragraphs in lists */
-li p {
-    margin: 0;
+.job-title {
+    font-weight: normal;
+    font-size: 12pt;
 }
 
-/* Spacing for list items */
+.job-date {
+    font-style: italic;
+    font-size: 9pt;
+}
+
 ul {
-    margin-bottom: 10px;
+    margin: 6px 0;
+    padding-left: 20px;
 }
 
 li {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    font-size: 9pt;
+}
+
+.education {
+    font-size: 10pt;
+}
+
+/* Print styles */
+@media print {
+    body {
+        margin: 0.5in;
+    }
+    
+    .header h1 {
+        font-size: 16pt;
+    }
+    
+    h2 {
+        font-size: 11pt;
+    }
 }
