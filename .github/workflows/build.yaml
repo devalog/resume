@@ -17,23 +17,43 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       
-    - name: Setup Pandoc
-      uses: r-lib/actions/setup-pandoc@v2
-      
-    - name: Install LaTeX
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-latex-extra
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
         
-    - name: Convert Markdown to PDF
+    - name: Install Puppeteer
       run: |
-        pandoc resume.md -o resume.pdf \
-          --pdf-engine=pdflatex \
-          --css=resume-style.css \
-          --variable geometry:margin=1in \
-          --variable fontsize=11pt \
-          --variable linestretch=1.15
-          
+        npm install puppeteer
+        
+    - name: Convert HTML to PDF
+      run: |
+        node -e "
+        const puppeteer = require('puppeteer');
+        (async () => {
+          const browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+          });
+          const page = await browser.newPage();
+          await page.goto('file://${{ github.workspace }}/resume.html', {
+            waitUntil: 'networkidle0'
+          });
+          await page.pdf({
+            path: 'resume.pdf',
+            format: 'A4',
+            printBackground: true,
+            margin: {
+              top: '0.5in',
+              right: '0.75in',
+              bottom: '0.5in',
+              left: '0.75in'
+            }
+          });
+          await browser.close();
+        })();
+        "
+        
     - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
