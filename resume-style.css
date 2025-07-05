@@ -10,7 +10,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     margin-bottom: 8px;
 }
 
@@ -19,6 +19,7 @@ body {
     font-size: 18pt;
     font-weight: normal;
     text-align: left;
+    line-height: 1.2;
 }
 
 .contact-info {
@@ -26,6 +27,7 @@ body {
     font-style: normal;
     font-size: 10pt;
     line-height: 1.2;
+    margin-top: 0;
 }
 
 .separator {
