@@ -10,7 +10,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     margin-bottom: 8px;
 }
 
@@ -23,8 +23,9 @@ body {
 
 .contact-info {
     text-align: right;
-    font-style: italic;
+    font-style: normal;
     font-size: 10pt;
+    line-height: 1.2;
 }
 
 .separator {
